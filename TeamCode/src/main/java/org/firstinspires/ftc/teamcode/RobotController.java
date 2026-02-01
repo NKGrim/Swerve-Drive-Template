@@ -57,9 +57,10 @@ public class RobotController {
         {
             double distFromAngle = angle-imu.getRobotYawPitchRollAngles().getYaw();
             double powerMult = Math.min(1, distFromAngle/10);
+            powerMult = Math.max(0.25, powerMult);
             for(SwerveModule swerve : swerves)
             {
-                swerve.setPower(power);
+                swerve.setPower(power*powerMult);
             }
         }
 
@@ -74,9 +75,10 @@ public class RobotController {
         {
             double distFromAngle = angle-imu.getRobotYawPitchRollAngles().getYaw();
             double powerMult = Math.min(1, distFromAngle/10);
+            powerMult = Math.max(0.25, powerMult);
             for(SwerveModule swerve : swerves)
             {
-                swerve.setPower(power);
+                swerve.setPower(power*powerMult);
             }
         }
     }
