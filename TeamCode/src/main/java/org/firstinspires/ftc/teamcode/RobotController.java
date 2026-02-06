@@ -23,10 +23,10 @@ public class RobotController {
     {
         this.telemetry = telemetry;
 
-        frontLeftSwerve = new SwerveModule(hardwareMap, telemetry, "frontLeft");
-        frontRightSwerve = new SwerveModule(hardwareMap, telemetry, "frontRight");
-        backLeftSwerve = new SwerveModule(hardwareMap, telemetry, "backLeft");
-        backRightSwerve = new SwerveModule(hardwareMap, telemetry, "backRight");
+        frontLeftSwerve = new SwerveModule(hardwareMap, "frontLeft");
+        frontRightSwerve = new SwerveModule(hardwareMap, "frontRight");
+        backLeftSwerve = new SwerveModule(hardwareMap, "backLeft");
+        backRightSwerve = new SwerveModule(hardwareMap, "backRight");
         swerves = List.of(frontLeftSwerve, frontRightSwerve, backLeftSwerve, backRightSwerve);
 
         imu = hardwareMap.get(IMU.class, "imu");

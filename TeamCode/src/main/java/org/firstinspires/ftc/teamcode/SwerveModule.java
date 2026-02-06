@@ -3,16 +3,16 @@ package org.firstinspires.ftc.teamcode;
 import android.util.Pair;
 
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorEx;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
 
 import org.firstinspires.ftc.robotcore.external.Telemetry;
 
 public class SwerveModule {
-    DcMotor motor;
-    Servo servo;
-
-    Telemetry telemetry;
+    public DcMotorEx motor;
+    public Servo servo;
 
     final double robotWidth = 18, robotLength= 18; //width = distance of robot along forwards/backwards direction, length = distance of robot along left/right direction
 
@@ -23,11 +23,10 @@ public class SwerveModule {
 
     public Vector2 pos;
 
-    public SwerveModule(HardwareMap hardwareMap, Telemetry telemetry, String moduleName)
+    public SwerveModule(HardwareMap hardwareMap, String moduleName)
     {
-        this.telemetry = telemetry;
 
-        this.motor = hardwareMap.get(DcMotor.class, moduleName+"Motor");
+        this.motor = hardwareMap.get(DcMotorEx.class, moduleName+"Motor");
         this.servo = hardwareMap.get(Servo.class, moduleName+"Servo");
         if(moduleName.equals("frontLeft"))
         {
@@ -81,5 +80,10 @@ public class SwerveModule {
     public double getAngleToTurn()
     {
         return Math.atan2(pos.x,-pos.y);
+    }
+
+    public void setDirection(DcMotorSimple.Direction direction)
+    {
+        motor.setDirection(direction);
     }
 }

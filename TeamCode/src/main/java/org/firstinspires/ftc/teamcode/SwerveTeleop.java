@@ -6,10 +6,10 @@ public class SwerveTeleop extends LinearOpMode {
 
     public void runOpMode()
     {
-        SwerveModule frontLeftSwerve = new SwerveModule(hardwareMap, telemetry, "frontLeft");
-        SwerveModule frontRightSwerve = new SwerveModule(hardwareMap, telemetry, "frontRight");
-        SwerveModule backLeftSwerve = new SwerveModule(hardwareMap, telemetry, "backLeft");
-        SwerveModule backRightSwerve = new SwerveModule(hardwareMap, telemetry, "backRight");
+        SwerveModule frontLeftSwerve = new SwerveModule(hardwareMap, "frontLeft");
+        SwerveModule frontRightSwerve = new SwerveModule(hardwareMap, "frontRight");
+        SwerveModule backLeftSwerve = new SwerveModule(hardwareMap, "backLeft");
+        SwerveModule backRightSwerve = new SwerveModule(hardwareMap, "backRight");
 
         waitForStart();
         while(!isStopRequested())
