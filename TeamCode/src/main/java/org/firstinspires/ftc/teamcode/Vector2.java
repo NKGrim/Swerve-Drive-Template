@@ -9,4 +9,12 @@ public class Vector2 {
         this.x = x;
         this.y = y;
     }
+    public Vector2 add(Vector2 vec)
+    {
+        return new Vector2(this.x+vec.x, this.y+vec.y);
+    }
+    public Vector2 subtract(Vector2 vec)
+    {
+        return new Vector2(this.x+vec.x, this.y+vec.y);
+    }
 }

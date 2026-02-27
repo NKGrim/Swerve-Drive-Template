@@ -232,8 +232,8 @@ public class SwerveConstants {
         backLeftPodName = "backRight";
         frontRightPodName = "frontRight";
         backRightPodName = "backRight";
-        frontLeftDirection = DcMotorSimple.Direction.REVERSE;
-        frontRightDirection = DcMotorSimple.Direction.REVERSE;
+        frontLeftDirection = DcMotorSimple.Direction.FORWARD;
+        frontRightDirection = DcMotorSimple.Direction.FORWARD;
         backLeftDirection = DcMotorSimple.Direction.FORWARD;
         backRightDirection = DcMotorSimple.Direction.FORWARD;
         motorCachingThreshold = 0.01;
