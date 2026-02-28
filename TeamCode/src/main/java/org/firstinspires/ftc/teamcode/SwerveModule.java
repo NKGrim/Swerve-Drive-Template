@@ -16,10 +16,10 @@ public class SwerveModule {
 
     final double robotWidth = 18, robotLength= 18; //width = distance of robot along forwards/backwards direction, length = distance of robot along left/right direction
 
-    private final Vector2 flPos = new Vector2(robotWidth/2, -robotLength/2);
+    private final Vector2 flPos = new Vector2(-robotWidth/2, robotLength/2);
     private final Vector2 frPos = new Vector2(robotWidth/2, robotLength/2);
     private final Vector2 blPos = new Vector2(-robotWidth/2, -robotLength/2);
-    private final Vector2 brPos = new Vector2(-robotWidth/2, robotLength/2);
+    private final Vector2 brPos = new Vector2(robotWidth/2, -robotLength/2);
 
     public Vector2 pos;
 
@@ -60,8 +60,8 @@ public class SwerveModule {
     }
     public double getDesiredAngle(double dx, double dy, double dr)
     {
-        double rx = -dr*pos.y;
-        double ry = dr*pos.x;
+        double rx = -dr*pos.x;
+        double ry = dr*pos.y;
         double wx = dx+rx;
         double wy = dy+ry;
 
